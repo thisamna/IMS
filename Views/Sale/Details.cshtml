@@ -1,0 +1,47 @@
+﻿@model WebApplication1.Models.Sale
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Purchase</h4>
+    <hr />
+    @if (Model != null)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Product Purchased")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Sale_name)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Purchased Quantity")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Sale_qnty)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Purchased Date")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Sale_date)
+            </dd>
+        </dl>
+    }
+    else
+    {
+        <p>No details available.</p>
+    }
+</div>
+<p>
+    {
+    @Html.ActionLink("Edit", "Edit","Sale", new { id = Model.id }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "DisplaySale", "Sale", new { @class = "btn btn-success" })
+    }
+</p>

@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.Sale
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Purchase</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Purchased Product")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Purchased Quantity")
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale_qnty)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Purchased Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale_date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "DisplaySale", "Sale", new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

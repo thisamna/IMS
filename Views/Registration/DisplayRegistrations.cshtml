@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication1.Models.Registration>
+
+@{
+    ViewBag.Title = "DisplayRegistrations";
+}
+
+<h2>DisplayRegistrations</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Registration",new {@class = "btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("First Name")
+        </th>
+        <th>
+            @Html.DisplayName("Last Name")
+        </th>
+        <th>
+            @Html.DisplayName("Username")
+        </th>
+        <th>
+            @Html.DisplayName("Password")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+       
+    </tr>
+}
+
+</table>

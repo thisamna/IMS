@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication1.Models.Purchase>
+
+@{
+    ViewBag.Title = "DisplayPurchase";
+}
+
+<h2>DisplayPurchase</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PurchaseProduct", "Purcahse", new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Purchased Product")
+        </th>
+        <th>
+            @Html.DisplayName("Purchased Quantity")
+        </th>
+        <th>
+            @Html.DisplayName("Purchased Date")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_qnty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit","Purchase", new { id=item.id }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", "Purchase" ,new { id=item.id },new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", "Purchase", new { id=item.id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

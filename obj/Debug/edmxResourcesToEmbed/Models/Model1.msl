@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Inventory_Management4ModelStoreContainer" CdmEntityContainer="Inventory_Management4Entities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="Inventory_Management4Model.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="Product_qnty" ColumnName="Product_qnty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="Inventory_Management4Model.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Purchase_name" ColumnName="Purchase_name" />
+          <ScalarProperty Name="Purchase_qnty" ColumnName="Purchase_qnty" />
+          <ScalarProperty Name="Purchase_date" ColumnName="Purchase_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="Inventory_Management4Model.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="Inventory_Management4Model.Sale">
+        <MappingFragment StoreEntitySet="Sale">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Sale_name" ColumnName="Sale_name" />
+          <ScalarProperty Name="Sale_qnty" ColumnName="Sale_qnty" />
+          <ScalarProperty Name="Sale_date" ColumnName="Sale_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
